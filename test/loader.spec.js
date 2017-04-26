@@ -35,8 +35,8 @@ describe('loader()', () => {
     </p>
     <pre>
         <code class="language-markup">
-            <h1>foo</h1>
-            <p>foo</p>
+            &lt;h1>foo&lt;/h1>
+            &lt;p>foo&lt;/p>
         </code>
     </pre>
 </div>
