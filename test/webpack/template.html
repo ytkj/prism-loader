@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 class="page-header h2">Prism.js Sample</h1>
+    <h2 class="h3">TypeScript</h2>
+    <pre class="line-numbers" data-line="13">
+        <code class="lang-typescript">import Vue from 'vue';
+import Component from 'vue-class-component';
+
+import * as Template from './HelloWorldComponent.html';
+
+/**
+* class HelloWorldComponent
+*/
+@Template
+@Component
+export default class HelloWorldComponent extends Vue {
+public message: string = 'Hello World';
+}               </code>
+    </pre>
+    <h2 class="h3">HTML</h2>
+    <pre class="line-numbers">
+        <code class="lang-markup">&lt;section&gt;
+&lt;h1 class="page-header"&gt;Hello World&lt;h1/&gt;
+&lt;!-- binding variable --&gt;
+&lt;p&gt;{{ message }}&lt;/p&gt;
+&lt;/section&gt;</code>
+    </pre>
+    <h2 class="h3">CSS</h2>
+    <pre class="line-numbers">
+        <code class="lang-css">section > h1.page-header {
+background-color: #7f7f7f;
+}                </code>
+    </pre>
+</div>
