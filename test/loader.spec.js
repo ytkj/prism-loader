@@ -5,6 +5,8 @@ const loader = require('../lib/loader');
 
 describe('loader()', () => {
 
+    const target = loader;
+
     it('TypeScript code block should be highlighted', () => {
         let html =
 `
@@ -15,14 +17,16 @@ describe('loader()', () => {
     </p>
     <pre>
         <code class="language-typescript">
-            let a: number = 1;
+export class HelloWorld extends Vue {
+
+}
         </code>
     </pre>
 </div>
 `;
-        let highlightedHtml = loader(html);
+        let highlightedHtml = target(html);
         let $ = cheerio.load(highlightedHtml);
-        expect($('pre code').html()).to.include('<span class="token keyword">let</span>');
+        expect($('pre code span.token.class-name').length).to.equals(2);
     });
 
     it('HTML code block should be highlighted', () => {
@@ -35,14 +39,80 @@ describe('loader()', () => {
     </p>
     <pre>
         <code class="language-markup">
-            &lt;h1>foo&lt;/h1>
-            &lt;p>foo&lt;/p>
+            &lt;div class="container"&gt;
+            &lt;/div&gt;
         </code>
     </pre>
 </div>
 `;
-        let highlightedCode = loader(html);
-        console.log(highlightedCode);
-        let $ = cheerio.load(highlightedCode);
-    })
+        let highlightedHtml = target(html);
+        let $ = cheerio.load(highlightedHtml);
+        expect($('pre code span.token.tag').length).to.equals(4);
+        expect($('pre code span.token.attr-name').length).to.equals(1);
+    });
+
+    it('CSS should be highlighted', () => {
+        let html =
+`
+<div>
+    <h1>Hello World</h1>
+    <p>
+        Basic code is below.
+    </p>
+    <pre>
+        <code class="language-css">
+div {
+    background-color: #7f7f7f;
+}
+        </code>
+    </pre>
+</div>
+`;
+        let highlightedHtml = target(html);
+        $ = cheerio.load(highlightedHtml);
+        expect($('pre code span.token.selector').length).to.equals(1);
+        expect($('pre code span.token.property').length).to.equals(1);
+    });
+
+    it('All three code blocks should be highlighted', () => {
+
+        let html =
+`
+<div>
+    <h1>Hello World</h1>
+    <p>
+        Basic code is below.
+    </p>
+    <pre>
+        <code class="language-typescript">
+export class HelloWorld extends Vue {
+
+}
+        </code>
+    </pre>
+    <pre>
+        <code class="language-markup">
+            &lt;div class="container"&gt;
+            &lt;/div&gt;
+        </code>
+    </pre>
+    <pre>
+        <code class="language-css">
+div {
+    background-color: #7f7f7f;
+}
+        </code>
+    </pre>
+
+</div>
+`;
+        let highlightedCode = target(html);
+        $ = cheerio.load(highlightedCode);
+        expect($('pre code span.token.class-name').length).to.equals(2);
+        expect($('pre code span.token.tag').length).to.equals(4);
+        expect($('pre code span.token.attr-name').length).to.equals(1);
+        expect($('pre code span.token.selector').length).to.equals(1);
+        expect($('pre code span.token.property').length).to.equals(1);
+    });
+
 });
