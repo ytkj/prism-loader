@@ -17,6 +17,13 @@ describe('loader()', () => {
     </p>
     <pre>
         <code class="language-typescript">
+import Vue from 'vue';
+import Component from 'vue-class-component';
+
+import * as Template from './template.html';
+
+@Template
+@Component
 export class HelloWorld extends Vue {
 
 }

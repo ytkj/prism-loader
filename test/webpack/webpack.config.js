@@ -23,6 +23,7 @@ module.exports = function(env) {
         devServer: {
             contentBase: [
                 path.join(__dirname, '../../node_modules/prismjs/themes'),
+                path.join(__dirname, '../../node_modules/prismjs/plugins/line-numbers'),
                 __dirname,
             ],
             publicPath: '/',
