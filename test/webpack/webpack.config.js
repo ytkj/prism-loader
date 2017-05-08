@@ -24,6 +24,7 @@ module.exports = function(env) {
             contentBase: [
                 path.join(__dirname, '../../node_modules/prismjs/themes'),
                 path.join(__dirname, '../../node_modules/prismjs/plugins/line-numbers'),
+                path.join(__dirname, '../../node_modules/prismjs/plugins/line-highlight'),
                 __dirname,
             ],
             publicPath: '/',
