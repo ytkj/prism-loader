@@ -22,7 +22,8 @@ describe('lineHighlight', () => {
             highlightedHtml,
             $,
             $element,
-            env;
+            env,
+            options;
 
         beforeEach(() => {
             language = 'typescript';
@@ -50,23 +51,37 @@ export class HelloWorld extends Vue {
 
 <span class="token punctuation">}</span>`;
             highlightedHtml =
-`<pre class="line-numbers" data-start="10">
+`<pre class="line-numbers" data-line="9">
     <code class="language-typescrip">${highlightedCode}
     </code>
 </pre>`;
             $ = cheerio.load(highlightedHtml);
             $element = $('code');
+            options = {
+                lineHighlight: {
+                    lineHeight: 24
+                }
+            };
             env = {
                 code: code,
                 language: language,
                 grammar: grammar,
                 highlightedCode: highlightedCode,
-                $element: $element
+                $element: $element,
+                options: options
             };
 
         });
 
-        it('a');
+        it('div.line-highlight should be appended to pre element', () => {
+            target(env);
+            expect(env.$element.parent().children('div.line-highlight').length).to.equals(1);
+        });
+
+        it('div.line-highlight should have style top:xxx', () => {
+            target(env);
+            expect(env.$element.parent().children('div.line-highlight').css('top')).to.equals('216px');
+        });
 
     });
 });
