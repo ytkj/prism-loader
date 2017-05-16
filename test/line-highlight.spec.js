@@ -58,9 +58,7 @@ export class HelloWorld extends Vue {
             $ = cheerio.load(highlightedHtml);
             $element = $('code');
             options = {
-                lineHighlight: {
-                    lineHeight: 24
-                }
+                fontSize: 16
             };
             env = {
                 code: code,

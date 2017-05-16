@@ -8,9 +8,9 @@ describe('option.js', () => {
 
         it('if argument is null or undefined, return default options', () => {
             expect(target(null).languages.length).to.equals(6);
-            expect(target(null).lineHighlight.lineHeight).to.equals(24);
+            expect(target(null).fontSize).to.equals(16);
             expect(target(undefined).languages.length).to.equals(6);
-            expect(target(undefined).lineHighlight.lineHeight).to.equals(24);
+            expect(target(undefined).fontSize).to.equals(16);
         });
 
         it('options.languages should be overridden', () => {
@@ -22,18 +22,16 @@ describe('option.js', () => {
             };
             let outopts = target(inopts);
             expect(outopts.languages.length).to.equals(2);
-            expect(outopts.lineHighlight.lineHeight).to.equals(24);
+            expect(outopts.fontSize).to.equals(16);
         });
 
-        it('options.lineHighlight should be overridden', () => {
+        it('options.fontSize should be overridden', () => {
             let inopts = {
-                lineHighlight: {
-                    lineHeight: 21
-                }
+                fontSize: 14
             };
             let outopts = target(inopts);
             expect(outopts.languages.length).to.equals(6);
-            expect(outopts.lineHighlight.lineHeight).to.equals(21);
+            expect(outopts.fontSize).to.equals(14);
         });
     });
 });
