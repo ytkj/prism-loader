@@ -10,21 +10,12 @@ module.exports = function(env) {
         resolve: {
             extensions: ['.js']
         },
-        module: {
-            rules: [{
-                test: /\.html$/,
-                use: [{
-                    loader: 'html-loader'
-                }, {
-                    loader: '../../index'
-                }]
-            }]
-        },
         devServer: {
             contentBase: [
                 path.join(__dirname, '../../node_modules/prismjs/themes'),
                 path.join(__dirname, '../../node_modules/prismjs/plugins/line-numbers'),
                 path.join(__dirname, '../../node_modules/prismjs/plugins/line-highlight'),
+                path.join(__dirname, './node_modules/bootstrap/dist/css'),
                 __dirname,
             ],
             publicPath: '/',

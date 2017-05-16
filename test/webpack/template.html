@@ -1,7 +1,7 @@
 <div class="container">
     <h1 class="page-header h2">Prism.js Sample</h1>
     <h2 class="h3">TypeScript</h2>
-    <pre class="line-numbers" data-start="10" data-line="18-19,21" data-line-offset="9">
+    <pre class="line-numbers" data-line="1,3,5,7,9,11,13,15,17,19">
         <code class="language-typescript">import Vue from 'vue';
 import Component from 'vue-class-component';
 
@@ -13,7 +13,14 @@ import * as Template from './HelloWorldComponent.html';
 @Template
 @Component
 export default class HelloWorldComponent extends Vue {
-    public message: string = 'Hello World';
+    public words: string[] = [
+        'Hello',
+        'World'
+    ];
+
+    public get messge(): string {
+        return this.words.join(' ');
+    }
 }               </code>
     </pre>
     <h2 class="h3">HTML</h2>
