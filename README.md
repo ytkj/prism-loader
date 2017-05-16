@@ -86,15 +86,17 @@ let a: number = 1;
 Specify language list you want to highlight.
 Available strings are listed in [Prism.js Homepage](http://prismjs.com/#languages-list).
 
-### Options.lineHighlight.lineHeight
+### Options.fontSize
 
 - Type: `number`
-- Default: `24`
+- Default: `16`
 
-Specify computed CSS `line-height` property.
-This value is used for Line Highlight Plugins.
-If highlighted line block is unexpectedly shifted, please adjust this value.
-(can not set automatically because highlighting logic run on Node.js, not Browser.)
+Specify CSS `font-size` property.
+This value is set to inline style of `<pre>` element,
+and 1.5 times value is used to calculate position-top of line highlight block, if line-highlight plugin is enabled.
+
+This value should be **even number**.
+[see here](https://github.com/PrismJS/prism/blob/v1.6.0/plugins/line-highlight/prism-line-highlight.js#L16)
 
 ## Note
 
