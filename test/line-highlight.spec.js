@@ -78,7 +78,7 @@ export class HelloWorld extends Vue {
 
         it('data-line="9", div.line-highlight should have style top:216px', () => {
             target(env);
-            expect(env.$element.parent().children('div.line-highlight').css('top')).to.equals('216px');
+            expect(env.$element.parent().children('div.line-highlight').css('top')).to.equals('192px');
         });
 
         it('data-line="2-3,9", two div.line-highlight should be appended', () => {
@@ -102,8 +102,8 @@ export class HelloWorld extends Vue {
             $ = cheerio.load(highlightedHtml);
             env.$element = $('code');
             target(env);
-            expect(env.$element.parent().children('div.line-highlight').eq(0).css('top')).to.equals('48px');
-            expect(env.$element.parent().children('div.line-highlight').eq(1).css('top')).to.equals('216px');
+            expect(env.$element.parent().children('div.line-highlight').eq(0).css('top')).to.equals('24px');
+            expect(env.$element.parent().children('div.line-highlight').eq(1).css('top')).to.equals('192px');
         });
 
     });
