@@ -19,12 +19,12 @@
   "dependencies": {
     "cheerio": "0.22.0",
     "loader-utils": "1.1.0",
-    "lodash.mergewith": "4.6.0",
+    "lodash.mergewith": "^4.6.2",
     "prismjs": "1.6.0"
   },
   "devDependencies": {
     "chai": "3.5.0",
-    "mocha": "3.3.0",
+    "mocha": "^6.2.2",
     "webpack": "2.4.1"
   }
 }
