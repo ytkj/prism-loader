@@ -1,6 +1,6 @@
 # prism-loader
 
-Code brush for [Prism.js](http://prismjs.com/) in build process, with [Webpack 2](https://webpack.js.org/).
+Code brush for [Prism.js](http://prismjs.com/) in build process, with Webpack >= 2.
 
 ## Example
 
@@ -44,7 +44,7 @@ Two plugins are available.
 
 ## Usage
 
-1. Configuration for Webpack 2
+1. Configuration for Webpack >= 2
 ```javascript
 module.exports = function(env) {
     /* ... */
@@ -131,4 +131,4 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.css';
     1. `cd test/webpack`
     2. `npm install`
     3. `npm test`
-    4. Open http://localhost:3030/test.html
+    4. Open http://localhost:3030/test01.html
