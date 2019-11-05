@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "chai": "3.5.0",
-    "mocha": "^6.2.2",
-    "webpack": "2.4.1"
+    "mocha": "^6.2.2"
   }
 }
