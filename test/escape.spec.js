@@ -61,7 +61,7 @@ let b: string = 'foo';
             const $ = cheerio.load(html, cheerioOption);
             const input = $(SELECTOR).parent().html();
             const expectation =
-`<code class="language-typescript">
+`    <code class="language-typescript">
 let a: number = 1;
 let b: string = 'foo';
     </code>
@@ -119,7 +119,7 @@ let b: string = 'foo';
             const $ = cheerio.load(html, cheerioOption);
             const input = $(SELECTOR).parent().html();
             const expectation =
-`<code class="language-typescript">
+`        <code class="language-typescript">
 let a: number = 1;
 let b: string = 'foo';
         </code>
@@ -144,8 +144,7 @@ let b: string = 'foo';
             const $ = cheerio.load(html, cheerioOption);
             const input = $(SELECTOR).parent().html();
             const expectation =
-`
-    <code class="language-typescript">
+`    <code class="language-typescript">
 let a: number = 1;
 let b: string = 'foo';
     </code>`;
@@ -162,8 +161,7 @@ let b: string = 'foo';
             const $ = cheerio.load(html, cheerioOption);
             const input = $(SELECTOR).parent().html();
             const expectation =
-`
-    <code class="language-typescript">
+`    <code class="language-typescript">
 let a: number = 1;
 let b: string = 'foo';
     </code>`;
@@ -183,8 +181,7 @@ let b: string = 'foo';
             const $ = cheerio.load(html, cheerioOption);
             const input = $(SELECTOR).parent().html();
             const expectation =
-`
-        <code class="language-typescript">
+`        <code class="language-typescript">
 let a: number = 1;
 let b: string = 'foo';
         </code>`;
