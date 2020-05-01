@@ -1,5 +1,5 @@
 // with bootstrap
-var template01 = require('html-loader!../../index?{"fontSize": 14}!./template.html');
+var template01 = require('html-loader!../../index?fontSize=14!./template.html');
 
 // w/o bootstrap
 var template02 = require('html-loader!../../index!./template.html');
