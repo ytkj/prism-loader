@@ -11,6 +11,7 @@ describe('option.js', () => {
             expect(target(null).fontSize).to.equals(16);
             expect(target(undefined).languages.length).to.equals(6);
             expect(target(undefined).fontSize).to.equals(16);
+            expect(target(null).cheerioOption.decodeEntities).to.be.false;
         });
 
         it('options.languages should be overridden', () => {
@@ -32,6 +33,16 @@ describe('option.js', () => {
             let outopts = target(inopts);
             expect(outopts.languages.length).to.equals(6);
             expect(outopts.fontSize).to.equals(14);
+        });
+
+        it('options.cheerioOption should be overriden', () => {
+            let inopts = {
+                cheerioOption: {
+                    xmlMode: true,
+                },
+            };
+            let outopts = target(inopts);
+            expect(outopts.cheerioOption.xmlMode).to.be.true;
         });
     });
 });
