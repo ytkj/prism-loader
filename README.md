@@ -40,7 +40,9 @@ Two plugins are available.
 
 ## Install
 
-1. `npm install -D prism-loader`
+```bash
+npm install -D prism-loader prismjs
+```
 
 ## Usage
 
