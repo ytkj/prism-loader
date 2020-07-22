@@ -122,7 +122,7 @@ div {
         expect($('pre code span.token.property').length).to.equals(1);
     });
 
-    it('should not output an <html> tag if cheerioOption.xmlMode = true', () => {
+    it('should not output an <html> tag if cheerioOptions.xmlMode = true', () => {
         let html =
 `
 <pre>
@@ -133,7 +133,7 @@ div {
 </pre>
 `;
 
-        let highlightedCode = target(html, {cheerioOption: {xmlMode: true}});
+        let highlightedCode = target(html, {cheerioOptions: {xmlMode: true}});
         $ = cheerio.load(highlightedCode, {xmlMode: true});
         expect($('html').length).to.equal(0);
     });
