@@ -122,4 +122,20 @@ div {
         expect($('pre code span.token.property').length).to.equals(1);
     });
 
+    it('should not output an <html> tag', () => {
+        let html =
+`
+<pre>
+<code class="language-markup">
+    &lt;div class="container"&gt;
+    &lt;/div&gt;
+</code>
+</pre>
+`;
+
+        let highlightedCode = target(html);
+        $ = cheerio.load(highlightedCode, {xmlMode: true});
+        expect($('html').length).to.equal(0);
+    })
+
 });
