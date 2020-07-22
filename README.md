@@ -78,7 +78,7 @@ let a: number = 1;
 
 ## API
 
-### Options.languages
+### `Options.languages`
 
 - Type: `Array<string>`
 - Default: `[ 'markup', 'typescript', 'javascript', 'css', 'php', 'java']`
@@ -86,7 +86,7 @@ let a: number = 1;
 Specify language list you want to highlight.
 Available strings are listed in [Prism.js Homepage](http://prismjs.com/#languages-list).
 
-### Options.fontSize
+### `Options.fontSize`
 
 - Type: `number`
 - Default: `16`
@@ -96,7 +96,14 @@ This value is set to inline style of `<pre>` element,
 and 1.5 times value is used to calculate position-top of line highlight block, if line-highlight plugin is enabled.
 
 This value should be **even number**.
-[see here](https://github.com/PrismJS/prism/blob/v1.6.0/plugins/line-highlight/prism-line-highlight.js#L16)
+[see here](https://github.com/PrismJS/prism/blob/v1.6.0/plugins/line-highlight/prism-line-highlight.js#L16).
+
+### `Options.cheerioOptions`
+
+- Type: `Object`
+- Default: `{decodeEntities: false}`
+
+Specify options for `cheerio`. For full list of options, [see here](https://github.com/cheeriojs/cheerio#loading).
 
 ## Note
 
